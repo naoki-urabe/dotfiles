@@ -7,13 +7,15 @@
             update_cache: yes
 -  name: 'install zsh and use as default shell'
    hosts: localhost
+   vars_files: 
+       - ./personal.yaml
    become: true
    become_method: sudo
    tasks:
        -  apt:
             pkg:
               zsh
-       -  command: chsh -s "$(which zsh)"
+       -  command: chsh {{ USER }} -s /usr/bin/zsh
 -  name: 'install build-essential'
    hosts: localhost
    become: true
@@ -33,3 +35,4 @@
             - curl
             - gnupg
             - lsb-release
+            
