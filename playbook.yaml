@@ -46,3 +46,12 @@
             - containerd.io
        -  user: name={{ USER }}
                 group=docker
+
+-  name: 'install kubectl'
+   hosts: localhost
+   become: true
+   become_method: sudo
+   tasks:
+       -  snap:
+            name: kubectl
+            classic: yes
