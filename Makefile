@@ -8,4 +8,4 @@ install-ansible:
 	sudo apt-add-repository -y --update ppa:ansible/ansible
 	sudo apt install -y ansible
 run-playbook:
-	ansible-playbook playbook.yaml --ask-become-pass
+	ansible-playbook -v playbook.yaml --ask-become-pass
