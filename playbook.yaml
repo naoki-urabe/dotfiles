@@ -5,9 +5,18 @@
    tasks:
        -  apt:
             update_cache: yes
+-  name: 'install zsh and use as default shell'
+   hosts: localhost
+   become: true
+   become_method: sudo
+   tasks:
+       -  apt:
+            pkg:
+              zsh
+       -  command: chsh -s "$(which zsh)"
 -  name: 'install build-essential'
    hosts: localhost
-   become: yes
+   become: true
    become_method: sudo
    tasks:
        -  apt:
@@ -15,7 +24,7 @@
             - build-essential
 -  name: 'install docker essentials'
    hosts: localhost
-   become: yes
+   become: true
    become_method: sudo
    tasks:
        -  apt:
