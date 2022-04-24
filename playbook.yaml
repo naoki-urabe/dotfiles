@@ -1,0 +1,26 @@
+-  name: 'apt-get update'
+   hosts: localhost
+   become: true
+   become_method: sudo
+   tasks:
+       -  apt:
+            update_cache: yes
+-  name: 'install build-essential'
+   hosts: localhost
+   become: yes
+   become_method: sudo
+   tasks:
+       -  apt:
+            pkg:
+            - build-essential
+-  name: 'install docker essentials'
+   hosts: localhost
+   become: yes
+   become_method: sudo
+   tasks:
+       -  apt:
+            pkg:
+            - ca-certificates
+            - curl
+            - gnupg
+            - lsb-release
