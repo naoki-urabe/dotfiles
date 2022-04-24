@@ -26,6 +26,8 @@
             - build-essential
 -  name: 'install docker essentials'
    hosts: localhost
+   vars_files:
+       - ./personal.yaml
    become: true
    become_method: sudo
    tasks:
@@ -35,4 +37,21 @@
             - curl
             - gnupg
             - lsb-release
-            
+       -  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+       -  shell: echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+       -  apt:
+            pkg:
+            - docker-ce
+            - docker-ce-cli
+            - containerd.io
+       -  user: name={{ USER }}
+                group=docker
+
+-  name: 'install kubectl'
+   hosts: localhost
+   become: true
+   become_method: sudo
+   tasks:
+       -  snap:
+            name: kubectl
+            classic: yes
