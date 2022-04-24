@@ -9,7 +9,7 @@ fi
 
 autoload -Uz promptinit
 promptinit
-prompt adam1
+#prompt adam1
 
 setopt histignorealldups sharehistory
 
@@ -47,6 +47,7 @@ alias k='kubectl'
 alias d='docker'
 alias dc='docker-compose'
 alias gcm='git commit -m'
+alias g='git'
 alias ga='git add'
 alias gs='git status'
 alias gp='git push'
@@ -83,3 +84,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+cd() {
+    builtin cd "$@" && ls
+}
