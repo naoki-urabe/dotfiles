@@ -59,6 +59,7 @@ alias zshrc='vim ~/.zshrc'
 alias refz='source ~/.zshrc'
 alias chezcd='chezmoi cd'
 alias cheza='chezmoi add'
+alias mk='make'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
