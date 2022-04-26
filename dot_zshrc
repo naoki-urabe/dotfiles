@@ -60,6 +60,7 @@ alias refz='source ~/.zshrc'
 alias chezcd='chezmoi cd'
 alias cheza='chezmoi add'
 alias mk='make'
+alias edit-cron='sudo vi /etc/crontab'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -91,3 +92,5 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 cd() {
     builtin cd "$@" && ls
 }
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
