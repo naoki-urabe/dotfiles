@@ -4,3 +4,4 @@ fish_variables
 .env
 op*
 personal.yaml
+minikube-linux-amd64
