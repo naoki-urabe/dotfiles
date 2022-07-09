@@ -52,6 +52,6 @@
    become: true
    become_method: sudo
    tasks:
-       -  snap:
-            name: kubectl
-            classic: yes
+       - shell: curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+       - command: chmod +x ./kubectl
+       - command: mv ./kubectl /usr/local/bin/kubectl
