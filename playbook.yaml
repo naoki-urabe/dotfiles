@@ -47,6 +47,14 @@
        -  user: name={{ USER }}
                 group=docker
 
+-  name: 'install docker-compose'
+   hosts: localhost
+   become: true
+   become_method: sudo
+   tasks:
+       - shell: curl -L https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+       - command: chmod +x /usr/local/bin/docker-compose
+
 -  name: 'install kubectl'
    hosts: localhost
    become: true
