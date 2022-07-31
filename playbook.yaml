@@ -5,14 +5,6 @@
    tasks:
        -  apt:
             update_cache: yes
--  name: 'install chezmoi'
-   hosts: localhost
-   become: true
-   become_method: sudo
-   tasks:
-       - shell: sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply {{ GITHUB_USERNAME }}
-   vars_files: 
-       - ./personal.yaml
 -  name: 'install zsh and use as default shell'
    hosts: localhost
    vars_files: 
