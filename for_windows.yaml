@@ -1,0 +1,18 @@
+-  name: 'apt-get update'
+   hosts: localhost
+   become: true
+   become_method: sudo
+   tasks:
+       -  apt:
+            update_cache: yes
+-  name: 'install zsh and use as default shell'
+   hosts: localhost
+   vars_files: 
+       - ./personal.yaml
+   become: true
+   become_method: sudo
+   tasks:
+       -  apt:
+            pkg:
+              zsh
+       -  command: chsh {{ USER }} -s /usr/bin/zsh

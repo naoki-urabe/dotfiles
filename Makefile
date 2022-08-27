@@ -9,3 +9,5 @@ install-ansible:
 	sudo apt install -y ansible
 run-playbook:
 	ansible-playbook -v playbook.yaml --ask-become-pass
+run-for-windows:
+	ansible-playbook -v for_windows.yaml --ask-become-pass
