@@ -16,3 +16,12 @@
             pkg:
               zsh
        -  command: chsh {{ USER }} -s /usr/bin/zsh
+-  name: install chezmoi
+   hosts: localhost
+   vars_files:
+       - ./personal.yaml
+   become: true
+   become_method: sudo
+   tasks:
+       -  shell: sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply {{ GITHUB_USERNAME }}
+       -  command: mv bin/chezmoi /usr/local/bin
