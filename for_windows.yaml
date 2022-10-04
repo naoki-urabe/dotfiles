@@ -16,6 +16,14 @@
             pkg:
               zsh
        -  command: chsh {{ USER }} -s /usr/bin/zsh
+-  name: install development essentials
+   hosts: localhost
+   become: true
+   become_method: sudo
+   tasks:
+       -  apt:
+            pkg:
+              neovim
 -  name: install chezmoi
    hosts: localhost
    vars_files:
