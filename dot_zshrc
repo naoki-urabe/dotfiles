@@ -94,3 +94,4 @@ cd() {
 }
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+. $HOME/.asdf/asdf.sh
