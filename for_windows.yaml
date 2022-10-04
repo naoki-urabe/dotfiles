@@ -1,35 +1,35 @@
--  name: 'apt-get update'
-   hosts: localhost
-   become: true
-   become_method: sudo
-   tasks:
-       -  apt:
-            update_cache: yes
--  name: 'install zsh and use as default shell'
-   hosts: localhost
-   vars_files: 
-       - ./personal.yaml
-   become: true
-   become_method: sudo
-   tasks:
-       -  apt:
-            pkg:
-              zsh
-       -  command: chsh {{ USER }} -s /usr/bin/zsh
--  name: install development essentials
-   hosts: localhost
-   become: true
-   become_method: sudo
-   tasks:
-       -  apt:
-            pkg:
-              neovim
--  name: install chezmoi
-   hosts: localhost
-   vars_files:
-       - ./personal.yaml
-   become: true
-   become_method: sudo
-   tasks:
-       -  shell: sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply {{ GITHUB_USERNAME }}
-       -  command: mv bin/chezmoi /usr/local/bin
+- name: 'apt-get update'
+  hosts: localhost
+  become: true
+  become_method: sudo
+  tasks:
+    - apt:
+        update_cache: yes
+- name: 'install zsh and use as default shell'
+  hosts: localhost
+  vars_files: 
+    - ./personal.yaml
+  become: true
+  become_method: sudo
+  tasks:
+    - apt:
+        pkg:
+          zsh
+    - command: chsh {{ USER }} -s /usr/bin/zsh
+- name: install development essentials
+  hosts: localhost
+  become: true
+  become_method: sudo
+  tasks:
+    - apt:
+        pkg:
+          neovim
+- name: install chezmoi
+  hosts: localhost
+  vars_files:
+    - ./personal.yaml
+  become: true
+  become_method: sudo
+  tasks:
+    - shell: sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply {{ GITHUB_USERNAME }}
+    - command: mv bin/chezmoi /usr/local/bin
