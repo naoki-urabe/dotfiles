@@ -62,6 +62,8 @@ alias vi='nvim'
 alias vim='nvim'
 alias tf='terraform'
 alias vs='code . &'
+alias kns='kubens'
+alias kctx='kubectx'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
