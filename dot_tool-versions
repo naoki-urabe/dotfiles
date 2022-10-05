@@ -7,3 +7,4 @@ kubectl 1.25.2
 kubectx 0.9.4
 helm 3.10.0
 tmux 3.3a
+1password-cli 2.7.1
