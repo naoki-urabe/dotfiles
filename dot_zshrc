@@ -57,12 +57,11 @@ alias slp='systemctl suspend'
 alias gpp='g++'
 alias zshrc='vim ~/.zshrc'
 alias refz='source ~/.zshrc'
-alias chezcd='chezmoi cd'
-alias cheza='chezmoi add'
-alias mk='make'
 alias edit-cron='sudo vi /etc/crontab'
 alias vi='nvim'
 alias vim='nvim'
+alias tf='terraform'
+alias vs='code . &'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
