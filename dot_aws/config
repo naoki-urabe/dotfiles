@@ -1,3 +1,6 @@
 [profile develop]
 region = ap-northeast-1
 output = json
+[profile admin]
+region = ap-northeast-1
+output = json
