@@ -8,11 +8,18 @@ EMAIL: 利用しているemail
 GITHUB_USERNAME: Githubのユーザ名
 ```
 
-2. bash init.shを実行し、ansibleをインストールしてください
-3. make run-for-windowsを実行し、asdfをインストールしてください
+2. 以下のコマンドを実行し、ansibleをインストールしてください
+```
+bash init.sh
+```
+3. 以下のコマンドを実行し、asdfをインストールしてください
+```
+make run-for-windows
+```
 4. ホームディレクトリに.zshrcを作成し、中に以下の記述を行ってください
 ```
 . $HOME/.asdf/asdf.sh
+
 ```
 5. 以下のコマンドを実行し、.zshrcの変更を読み込んでください
 ```
@@ -32,5 +39,8 @@ chezmoi init --apply --verbose https://github.com/username/dotfiles.git
 ```
 asdf install
 ```
-11. chezmoi管理の.git/configの通信方式をssh方式に変えておいてください。
+11. 以下のコマンドをhome配下、chezmoi管理のdotfiles内でそれぞれ打ち、通信方式をssh方式に変えておいてください。
+```
+git remote set-url origin git@github.com:username/dotfiles.git
+```
 12. 以上で完了です。お疲れさまでした!
