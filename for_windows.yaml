@@ -23,5 +23,12 @@
     - ansible.builtin.git:
         repo: https://github.com/asdf-vm/asdf.git
         dest: ~/.asdf
-    - shell: bash scripts/install_asdf_plugins.sh
+    - command: bash scripts/install_asdf_plugins.sh
     - command: asdf install
+- name: config git
+  hosts: localhost
+  vars_files: 
+    - ./personal.yaml
+  tasks:
+    - command: git config --global user.email ${{ EMAIL }}
+    - command: git config --global user.name ${{ GITHUB_USERNAME }}
