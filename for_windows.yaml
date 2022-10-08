@@ -24,7 +24,7 @@
         repo: https://github.com/asdf-vm/asdf.git
         dest: ~/.asdf
     - command: bash scripts/install_asdf_plugins.sh
-    - command: asdf install
+    - command: bash scripts/asdf_pre_install_plugins.sh
 - name: config git
   hosts: localhost
   vars_files: 
