@@ -11,3 +11,5 @@ run-playbook:
 	ansible-playbook -v playbook.yaml --ask-become-pass
 run-for-windows:
 	ansible-playbook -v for_windows.yaml --ask-become-pass
+run-asdf-package-preinstall:
+	ansible-playbook -v asdf_package_preinstall.yaml
