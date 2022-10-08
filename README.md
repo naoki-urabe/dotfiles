@@ -19,7 +19,6 @@ make run-for-windows
 4. ホームディレクトリに.zshrcを作成し、中に以下の記述を行ってください
 ```
 . $HOME/.asdf/asdf.sh
-
 ```
 5. 以下のコマンドを実行し、.zshrcの変更を読み込んでください
 ```
