@@ -16,9 +16,12 @@
         pkg:
           zsh
     - command: chsh {{ USER }} -s /usr/bin/zsh
+    - command: echo ". $HOME/.asdf/asdf.sh" >> ~/.zshrc
 - name: 'install asdf'
   hosts: localhost
   tasks:
     - ansible.builtin.git:
         repo: https://github.com/asdf-vm/asdf.git
         dest: ~/.asdf
+    - shell: bash scripts/install_asdf_plugins.sh
+    - command: asdf install
