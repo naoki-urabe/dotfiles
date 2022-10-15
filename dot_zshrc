@@ -66,6 +66,7 @@ alias kns='kubens'
 alias kctx='kubectx'
 
 export AWS_PROFILE=develop
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
