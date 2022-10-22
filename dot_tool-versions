@@ -9,3 +9,6 @@ helm 3.10.0
 tmux 3.3a
 1password-cli 2.7.1
 golang 1.19.2
+hugo 0.104.3
+nodejs 18.11.0
+ruby 3.1.2
