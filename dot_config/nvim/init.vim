@@ -4,6 +4,9 @@ set tabstop=4
 set shiftwidth=4
 set mouse=a
 set clipboard+=unnamedplus
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
+set tags=./tags;,tags;
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
