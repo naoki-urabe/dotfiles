@@ -1,4 +1,7 @@
 set number
+set autoindent
+set smartindent
+set smarttab
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -7,6 +10,11 @@ set clipboard+=unnamedplus
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 set tags=./tags;,tags;
+if has("autocmd")
+    filetype plugin on
+    filetype indent on
+    autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
+endif
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
