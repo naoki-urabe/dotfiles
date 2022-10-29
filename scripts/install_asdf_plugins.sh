@@ -1,6 +1,6 @@
 #!bin/bash
 
-plugin_names=("chezmoi" "awscli" "terraform" "neovim" "krew" "kubectl" "kubectx" "helm" "tmux" "1password-cli" "golang" "hugo" "nodejs" "ruby")
+plugin_names=("chezmoi" "awscli" "terraform" "neovim" "krew" "kubectl" "kubectx" "helm" "tmux" "1password-cli" "golang" "hugo" "nodejs" "ruby" "python" "yarn")
 
 idx=0
 for i in "${plugin_names[@]}"
