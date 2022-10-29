@@ -1,3 +1,6 @@
+let g:python3_host_prog = '/usr/bin/python3'
+runtime! plugins/dein.rc.vim
+inoremap <silent> jj <ESC>
 set number
 set autoindent
 set smartindent
@@ -10,43 +13,20 @@ set clipboard+=unnamedplus
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 set tags=./tags;,tags;
+command Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`
 if has("autocmd")
     filetype plugin on
     filetype indent on
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
 endif
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/home/nao_e/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin('/home/nao_e/.cache/dein')
-
-" Let dein manage dein
-" Required:
-call dein#add('/home/nao_e/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-" Add or remove your plugins here like this:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-call dein#add('preservim/nerdtree')
-" Required:
-call dein#end()
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
-"End dein Scripts-------------------------
-
-autocmd VimEnter * execute 'NERDTree' | wincmd p
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" ファイル保存時にディレクトリがなかったら作成するか問う
+augroup vimrc-auto-mkdir
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+  
+  function! s:auto_mkdir(dir, force)
+    if !isdirectory(a:dir) && (a:force || input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction
+augroup END
