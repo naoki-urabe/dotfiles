@@ -10,3 +10,9 @@ repo = "shougo/deol.nvim"
 hook_add = """
 source ~/.config/nvim/plugins/deol.rc.vim
 """
+
+[[plugins]]
+repo = "jiangmiao/auto-pairs"
+
+[[plugins]]
+repo = "Yggdroot/indentLine"
