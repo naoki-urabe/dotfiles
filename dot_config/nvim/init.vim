@@ -14,6 +14,7 @@ set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 set tags=./tags;,tags;
 command Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`
+let mapleader = "\<Space>"
 if has("autocmd")
     filetype plugin on
     filetype indent on
