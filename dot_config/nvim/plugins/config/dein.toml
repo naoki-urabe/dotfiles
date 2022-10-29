@@ -19,3 +19,6 @@ repo = "Yggdroot/indentLine"
 
 [[plugins]]
 repo = "neoclide/coc.nvim"
+hook_add = """
+source ~/.config/nvim/plugins/coc.rc.vim
+"""
