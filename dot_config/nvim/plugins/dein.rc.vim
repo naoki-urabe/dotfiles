@@ -1,9 +1,7 @@
 let s:plugin = '~/.config/nvim/plugins/config/dein.toml'
 
 "dein Scripts-----------------------------
-"if dein#check_install()
-"  call dein#install()
-"endif
+
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -26,4 +24,7 @@ endif
 filetype plugin indent on
 syntax enable
 
+if dein#check_install()
+    call dein#install()
+endif
 "End dein Scripts-------------------------
