@@ -5,3 +5,4 @@ fish_variables
 op*
 personal.yaml
 minikube-linux-amd64
+dotfiles/
