@@ -18,7 +18,9 @@ let mapleader = "\<Space>"
 if has("autocmd")
     filetype plugin on
     filetype indent on
+    autocmd FileType go   setlocal sw=4 sts=4 ts=4 noet
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
+    au BufWritePost *.go !gofmt -w %
 endif
 " ファイル保存時にディレクトリがなかったら作成するか問う
 augroup vimrc-auto-mkdir
