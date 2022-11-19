@@ -65,6 +65,7 @@ alias tf='terraform'
 alias vs='code . &'
 alias kns='kubens'
 alias kctx='kubectx'
+alias rd='cd $(ghq list -p | fzf)'
 
 export AWS_PROFILE=develop
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
