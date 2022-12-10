@@ -1,4 +1,16 @@
 let g:python3_host_prog = '/usr/bin/python3'
+let g:clipboard = {
+    \   'name': 'myClipboard',
+    \   'copy': {
+    \      '+': 'win32yank.exe -i',
+    \      '*': 'win32yank.exe -i',
+    \    },
+    \   'paste': {
+    \      '+': 'win32yank.exe -o',
+    \      '*': 'win32yank.exe -o',
+    \   },
+    \   'cache_enabled': 1,
+    \ }
 runtime! plugins/dein.rc.vim
 inoremap <silent> jj <ESC>
 set number
@@ -20,6 +32,7 @@ if has("autocmd")
     filetype indent on
     autocmd FileType go   setlocal sw=4 sts=4 ts=4 noet
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType tf   setlocal sw=2 sts=2 ts=2 et
     au BufWritePost *.go !gofmt -w %
 endif
 " ファイル保存時にディレクトリがなかったら作成するか問う
