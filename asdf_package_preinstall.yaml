@@ -1,5 +1,0 @@
-- name: 'install asdf'
-  hosts: localhost
-  tasks:
-    - command: bash scripts/install_asdf_plugins.sh
-    - command: bash scripts/asdf_pre_install_plugins.sh

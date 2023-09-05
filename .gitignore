@@ -5,4 +5,9 @@ fish_variables
 op*
 personal.yaml
 minikube-linux-amd64
-dotfiles/
+.config/coc/
+.config/nvim/plugins/
+.config/gh/hosts.yml
+.config/Keybase
+.config/keybase
+op/
