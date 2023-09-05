@@ -1,6 +1,0 @@
-*.yaml
-*.md
-*.sh
-Makefile
-scripts/
-dotfiles/
