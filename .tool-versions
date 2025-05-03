@@ -3,3 +3,4 @@ kubectl 1.33.0
 terraform 1.11.4
 ghq 1.8.0
 peco 0.5.11
+awscli 2.27.7
