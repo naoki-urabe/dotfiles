@@ -7,4 +7,7 @@ curl -sS https://starship.rs/install.sh | sh && \
 for f in .??*; do
     ln -snfv ${PWD}/"$f" ~/
 done
+for f in .config/*; do
+    ln -snfv ${PWD}/"$f" ~/"$f"
+done
 echo "デフォルトシェルを反映するため、ログインし直してください"
