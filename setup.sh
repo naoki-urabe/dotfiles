@@ -4,10 +4,5 @@ chsh -s $(which zsh) && \
 curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
     | sudo bash -s -- --repo rossmacarthur/sheldon --to /usr/local/bin -f && \
 curl -sS https://starship.rs/install.sh | sh && \
-for f in .??*; do
-    ln -snfv ${PWD}/"$f" ~/
-done
-for f in .config/*; do
-    ln -snfv ${PWD}/"$f" ~/"$f"
-done
+bash link_config.sh && \
 echo "デフォルトシェルを反映するため、ログインし直してください"
