@@ -18,3 +18,21 @@ shell = "zsh"
 #
 # [plugins.base16]
 # github = "chriskempson/base16-shell"
+[plugins.starship]
+inline='eval "$(starship init zsh)"'
+[plugins.tmux_startup]
+inline='''
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
+'''
+[plugins.alias]
+inline='''
+alias ga='git add'
+alias gcm='git commit -m'
+alias gp='git push'
+alias k='kubectl'
+alias tf='terraform'
+'''
+[plugins.asdf_path]
+inline='export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"'
