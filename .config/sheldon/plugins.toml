@@ -31,8 +31,12 @@ inline='''
 alias ga='git add'
 alias gcm='git commit -m'
 alias gp='git push'
+alias gsw='git switch'
 alias k='kubectl'
 alias tf='terraform'
 '''
 [plugins.asdf_path]
-inline='export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"'
+inline='''
+export PATH="$HOME/dotfiles/asdf/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+'''
